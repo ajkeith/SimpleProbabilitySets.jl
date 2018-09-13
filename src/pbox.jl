@@ -36,7 +36,7 @@ Tuple of lower and upper cdfs
 """
 cdfs(pb::PBox) = cdf.(pb.dlower, support(pb.dlower)), cdf.(pb.dupper, support(pb.dupper))
 
-function pinterval(pb::PBox)
+function pints(pb::PBox)
     cdflower, cdfupper = cdfs(pb)
     n = length(cdflower)
     plower = Array{Float64}(n)
