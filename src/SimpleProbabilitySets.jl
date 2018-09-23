@@ -1,6 +1,7 @@
 module SimpleProbabilitySets
 
 using Distributions
+using RCall
 
 """
     SimpleProbabilitySet
@@ -18,6 +19,7 @@ export
 
 include("pinterval.jl")
 export
-    PInterval
+    PInterval,
+    psample
 
 end
