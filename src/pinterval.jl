@@ -58,8 +58,10 @@ function psample(plower::Vector{Float64}, pupper::Vector{Float64})
     bc[end] = 1.0
     d = vcat(fill("<=", 2n),"=")
     nsample = 1
+    rseed = rand(1:10_000)
     rout = R"""
     library(hitandrun)
+    set.seed($rseed)
     constr <- list(constr = $A, rhs = $bc, dir = $d)
     samples <- hitandrun(constr, n.samples = $nsample, thin = ($n) ^ 3)
     """
