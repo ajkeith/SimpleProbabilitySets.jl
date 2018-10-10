@@ -52,7 +52,8 @@ function psample(plower::Vector{Float64}, pupper::Vector{Float64})
     A[end,:] = ones(n)
     bc = Array{Float64}(2n+1)
     for i = 1:n
-        bc[2i - 1] = pupper[i]
+        # due to limitations in hitandrun, set upper limit to 0+eps if upper limit is actually 0.0
+        bc[2i - 1] = pupper[i] == 0.0 ? pupper[i] + 0.0000001 : pupper[i]
         bc[2i] = -1.0 * plower[i]
     end
     bc[end] = 1.0
