@@ -53,6 +53,6 @@ psample(plower, pupper)
 where `plower` and `pupper` are vectors of lower and upper interval bounds. This sampling function calls the R library `hitandrun` with details published in Tervonen et al. (2013). 
 
 ## References
-If this code is useful to you, please star this package and consider citing the following papers.
+If this code is useful to you, please star this package and consider citing the following paper.
 
 Tervonen, T., van Valkenhoef, G., Baştürk, N., & Postmus, D. (2013). Hit-And-Run enables efficient weight generation for simulation-based multiple criteria decision analysis. European Journal of Operational Research, 224(3), 552–559. https://doi.org/10.1016/j.ejor.2012.08.026
